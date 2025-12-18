@@ -61,9 +61,10 @@ To make the analysis reusable in a production setting, the project includes work
 ### Funnel Performance (Appointment → Treatment → Billing)
 - Appointment → Treatment conversion: **50%** (200 treated out of 400 appointments)
 
-| Appointments | Treated | Conversion | Drop-off |
+| Appointments | Treated Appointments | Appointment → Treatment Rate | Appointment Drop-off |
 |---:|---:|---:|---:|
 | 400 | 200 | 0.50 (50%) | 0.50 (50%) |
+
 
 - Treatment → Billing conversion: **100%** (no downstream revenue leakage once treatment occurs)
 
