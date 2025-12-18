@@ -48,10 +48,10 @@ Hospital management requires a data-driven understanding of daily operations and
 
 ## 🧩 Key Deliverables
 To make the analysis reusable in a production setting, the project includes working views such as:
-- `vw_doctor_monthly_performance`
-- `vw_specialization_revenue`
-- `vw_patient_value_segments`
-- `vw_appointment_to_billing_funnel`
+- `vw_doctor_monthly_performance` — monthly doctor appointments + revenue KPIs  
+- `vw_specialization_revenue` — total revenue + revenue share by specialization  
+- `vw_patient_value_segments` — patient segmentation (Frequency/Monetary/Recency)  
+- `vw_appointment_to_billing_funnel` — Appointment → Treatment → Billing funnel KPIs  
 
 
 
