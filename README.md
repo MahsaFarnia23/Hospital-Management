@@ -57,14 +57,34 @@ To make the analysis reusable in a production setting, the project includes work
 
 ---
 
-## 📌 Key Results Snapshot 
-- Funnel KPI: Appointment → Treatment conversion **50%**; Treatment → Billing **100%**  
+## 📌 Key Results Snapshot (High-signal KPIs)
+### Funnel Performance (Appointment → Treatment → Billing)
+- Appointment → Treatment conversion: **50%** (200 treated out of 400 appointments)  
+- Treatment → Billing conversion: **100%** (no downstream revenue leakage once treatment occurs)
+
+### Revenue Drivers
+- Revenue share by specialization: Pediatrics **46.91%**, Dermatology **35.13%**, Oncology **17.95%**
+
+- Top treatment types by revenue: **Chemotherapy** ranks #1, followed by imaging/diagnostics (X-Ray, MRI, ECG) 
 
 
-- Revenue share by specialization (Pediatrics / Dermatology / Oncology) 
+### Risk Exposure
+- Revenue concentration: **Top 5 doctors generate ~60% of total revenue**
 
-- Patient segmentation counts (Chronic high-frequency / Frequent low-cost / Other)  
+- Highest volatility (provider-level): doctors such as **D008** and **D005** show the widest monthly revenue ranges
 
+
+### Patient Behavior (SQL-only Segmentation)
+- Chronic high-frequency patients: **20**
+- Frequent low-cost patients: **16**
+- Other patients: **12**
+
+
+### Temporal Patterns
+- Demand peak: **April (50 appointments)**  
+- Lowest demand: **September (22 appointments)**  
+- Revenue peak: **April (~592K)**; weakest: **August (~291K)**  
+- MoM analysis shows cyclical growth/decline and occasional divergence between volume vs value.
 
 ---
 
