@@ -100,9 +100,9 @@ To make the analysis reusable in a production setting, the project includes work
 ---
 
 ## ✅ Executive Summary
--Where are the main revenue drivers?
--Where do we have risk exposure?
--What needs to be changed?
+- Where are the main revenue drivers?
+- Where do we have risk exposure?
+- What needs to be changed?
 
 This project analyzes hospital operational and financial data to identify performance gaps, revenue drivers, and strategic risks.  
 Results show that **doctor workload and patient demand are unevenly distributed over time**, creating periods of underutilization and overload.  
