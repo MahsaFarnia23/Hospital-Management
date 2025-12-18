@@ -100,6 +100,16 @@ To make the analysis reusable in a production setting, the project includes work
 ---
 
 ## ✅ Executive Summary
+-Where are the main revenue drivers?
+-Where do we have risk exposure?
+-What needs to be changed?
+
+This project analyzes hospital operational and financial data to identify performance gaps, revenue drivers, and strategic risks.  
+Results show that **doctor workload and patient demand are unevenly distributed over time**, creating periods of underutilization and overload.  
+From a financial perspective, **Pediatrics and Dermatology generate the majority of revenue**, while **Oncology delivers the highest revenue per appointment**, indicating high-value but lower-volume activity.  
+Revenue and appointment trends exhibit **clear seasonality**, with strong performance in spring and early summer and notable slowdowns in late summer.  
+Patient segmentation reveals a **small group of chronic, high-frequency patients contributing disproportionately to total revenue**, increasing operational dependency risk.  
+Overall, the analysis highlights the need for **flexible staffing, revenue diversification, and proactive management of high-impact patient and provider segments** to improve efficiency and financial resilience.
 
 ---
 
