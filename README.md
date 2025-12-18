@@ -3,7 +3,7 @@ A complete end-to-end SQL analytics project using the hospital management datase
 This project demonstrates practical skills in .... insights.
 
 ----
-# 📑 Table of Contents
+## 📑 Table of Contents
 
 ----
 # 📘 Project Overview
