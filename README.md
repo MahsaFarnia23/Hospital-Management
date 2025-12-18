@@ -60,6 +60,7 @@ To make the analysis reusable in a production setting, the project includes work
 ## 📌 Key Results Snapshot (High-signal KPIs)
 ### Funnel Performance (Appointment → Treatment → Billing)
 - Appointment → Treatment conversion: **50%** (200 treated out of 400 appointments)
+  
   | Metric | Appointments | Treated | Appointment→Treatment Conversion | Drop-off |
 |---|---:|---:|---:|---:|
 | Funnel KPI | 400 | 200 | 0.50 (50%) | 0.50 (50%) |
