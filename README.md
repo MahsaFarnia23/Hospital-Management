@@ -1,9 +1,9 @@
 # Hospital-Management
 
-## Business Problem & Project Objective
-
+## Business Problem
 Hospital management requires a data-driven understanding of daily operations and financial performance in order to support informed decision-making and resource planning.
 
+## Project Objective
 The objective of this project is to analyze hospital operational and financial data using SQL to uncover actionable insights across four key business dimensions:
 
 - **Operational efficiency of doctors and appointments**  
@@ -17,5 +17,15 @@ The objective of this project is to analyze hospital operational and financial d
 
 - **Workload imbalance and growth trends**  
   Assess temporal trends in appointments and revenue to detect growth, seasonality, and workload disparities over time.
+---
 
-By translating raw transactional data into structured KPIs and analytical insights, this project demonstrates the practical application of SQL for real-world healthcare analytics and business intelligence use cases.
+
+## Business Framing
+Hospital management wants to better understand:
+- Operational efficiency of doctors and appointments
+- Revenue drivers and cost/value distribution
+- Patient behavior patterns and segmentation (SQL-only)
+- Workload imbalance, seasonality, and growth/decline trends
+
+---
+ 
