@@ -1,5 +1,5 @@
 ## 🗂️ Dataset & Tables
-**Hospital Management Dataset**
+### Hospital Management Dataset
 The dataset used in this project was sourced from **Kaggle** and originally provided in **CSV format**.  
 It was imported into **SQLite** to enable structured, SQL-based analysis.
 
@@ -11,7 +11,7 @@ It was imported into **SQLite** to enable structured, SQL-based analysis.
 - **Number of rows:** 
 - **Number of columns:** 
 
-##Core tables used:
+### Core tables used:
 - `appointments` (appointment_date, doctor_id, patient_id, …)
 - `doctors` (doctor_id, specialization, …)
 - `treatments` (appointment_id, treatment_type, …)
