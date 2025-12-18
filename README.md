@@ -60,17 +60,17 @@ To make the analysis reusable in a production setting, the project includes work
 ## 📌 Key Results Snapshot (High-signal KPIs)
 ### Funnel Performance (Appointment → Treatment → Billing)
 - Appointment → Treatment conversion: **50%** (200 treated out of 400 appointments)
-  
-  | Metric | Appointments | Treated | Appointment→Treatment Conversion | Drop-off |
-|---|---:|---:|---:|---:|
-| Funnel KPI | 400 | 200 | 0.50 (50%) | 0.50 (50%) |
-
 
 | Appointments | Treated | Conversion | Drop-off |
 |---:|---:|---:|---:|
 | 400 | 200 | 0.50 (50%) | 0.50 (50%) |
 
 - Treatment → Billing conversion: **100%** (no downstream revenue leakage once treatment occurs)
+
+| Patients with Treatment | Treated Patients with Billing | Treatment → Billing Rate | Treatment → Billing Drop-off |
+|---:|---:|---:|---:|
+| 48 | 48 | 1.00 (100%) | 0.00 (0%) |
+
 
 ### Revenue Drivers
 - Revenue share by specialization: Pediatrics **46.91%**, Dermatology **35.13%**, Oncology **17.95%**
