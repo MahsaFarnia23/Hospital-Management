@@ -6,7 +6,7 @@ It was imported into **SQLite** to enable structured, SQL-based analysis.
 ----
 ### Dataset Details
 - **File name:** ``
-- **Source:** [Kaggle — Hospital Management Dataset]([https://www.kaggle.com/datasets/vivek468/superstore-dataset-final?resource=download](https://www.kaggle.com/datasets/kanakbaghel/hospital-management-dataset?utm_source=chatgpt.com&select=treatments.csv)
+- **Source:** [Kaggle — Hospital Management Dataset](https://www.kaggle.com/datasets/vivek468/superstore-dataset-final?resource=download](https://www.kaggle.com/datasets/kanakbaghel/hospital-management-dataset?utm_source=chatgpt.com&select=treatments.csv)
 - **Dataset type:** 
 - **Number of rows:** 
 - **Number of columns:** 
