@@ -1,5 +1,5 @@
 ## 🗂️ Dataset & Tables
-**Dataset:** Hospital Management Dataset
+**Hospital Management Dataset**
 The dataset used in this project was sourced from **Kaggle** and originally provided in **CSV format**.  
 It was imported into **SQLite** to enable structured, SQL-based analysis.
 
