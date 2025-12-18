@@ -6,16 +6,16 @@ This project demonstrates practical skills in .... insights.
 ## 📑 Table of Contents
 
 ----
-# 📘 Project Overview
+## 📘 Project Overview
 This SQL project performs a complete analysis of the hospital management dataset using **SQLite**.  
 It evaluates efficiency, Revenue, Patient behavior and treands.
 
 ----
-# Hospital Management Analysis
+## Hospital Management Analysis
 
 
 ---
-# 🎯 Project Objective 
+## 🎯 Project Objective 
 Hospital management wants to better understand:
 - Operational **efficiency** of doctors and appointments
 - **Revenue** drivers and cost/value distribution
@@ -24,6 +24,6 @@ Hospital management wants to better understand:
 
 ---
  
-# Business Problem
+## Business Problem
 Hospital management requires a data-driven understanding of daily operations and financial performance in order to support informed decision-making and resource planning.
 
