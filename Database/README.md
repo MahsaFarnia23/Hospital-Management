@@ -18,4 +18,4 @@ It was imported into **SQLite** to enable structured, SQL-based analysis.
 - `billing` (patient_id, amount, …)
 - `patients` (patient_id, gender, …)
 
-> **Modeling note (important):** In this dataset, `billing` is linked to **patients** (via `patient_id`) rather than directly to each appointment line item.  
+> **Modeling note:** In this dataset, `billing` is linked to **patients** (via `patient_id`) rather than directly to each appointment line item.  
