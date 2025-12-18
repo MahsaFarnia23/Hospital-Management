@@ -19,8 +19,3 @@ It was imported into **SQLite** to enable structured, SQL-based analysis.
 - `patients` (patient_id, gender, …)
 
 > **Modeling note (important):** In this dataset, `billing` is linked to **patients** (via `patient_id`) rather than directly to each appointment line item.  
-> Revenue is attributed to doctors/specializations using patient appointment associations. This assumption is documented throughout the analysis to avoid misinterpretation.
-
-
-
-
