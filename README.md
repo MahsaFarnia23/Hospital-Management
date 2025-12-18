@@ -9,13 +9,12 @@ This project demonstrates practical data analyst skills in **data modeling assum
 - [📘 Project Overview](#-project-overview)
 - [🎯 Project Objectives](#-project-objectives)
 - [💼 Business Problem](#-business-problem)
-- [🗂️ Dataset & Tables](#️-dataset--tables)
 - [🧩 Key Deliverables](#-key-deliverables)
 - [📌 Key Results Snapshot](#-key-results-snapshot)
 - [✅ Executive Summary](#-executive-summary)
 - [🧠 Management Recommendations](#-management-recommendations)
 - [▶️ How to Run](#️-how-to-run)
-- [📁 Project Structure](#-project-structure)
+
 
 ---
 
