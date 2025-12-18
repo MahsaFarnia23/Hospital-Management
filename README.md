@@ -11,7 +11,7 @@ This SQL project performs a complete analysis of the hospital management dataset
 It evaluates efficiency, Revenue, Patient behavior and treands.
 
 ----
-## Hospital Management Analysis
+## 🏥 Hospital Management Analysis
 
 
 ---
@@ -24,6 +24,6 @@ Hospital management wants to better understand:
 
 ---
  
-## Business Problem
+## 💼 Business Problem
 Hospital management requires a data-driven understanding of daily operations and financial performance in order to support informed decision-making and resource planning.
 
