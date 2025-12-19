@@ -132,7 +132,7 @@ To make the analysis reusable in a production setting, the project includes work
 | 2023-04 | 50 |
 | 2023-01 | 40 |
 
-- Lowest demand: **September (22 appointments)**  
+- Lowest demand: September (22 appointments)
 #### - Revenue peak: 
 
 | Month | Monthly Revenue |
@@ -141,7 +141,7 @@ To make the analysis reusable in a production setting, the project includes work
 | 2023-05 | 569,006.50 |
 | 2023-06 | 560,830.22 |
 
- weakest revenue: **August (~291K)**
+ weakest revenue: August (~291K)
 #### - MoM analysis shows cyclical growth/decline and occasional divergence between volume vs value.
 
 ---
