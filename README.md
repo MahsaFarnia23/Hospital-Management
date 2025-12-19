@@ -84,6 +84,14 @@ To make the analysis reusable in a production setting, the project includes work
 
 - Top treatment types by revenue: **Chemotherapy** ranks #1, followed by imaging/diagnostics (X-Ray, MRI, ECG) 
 
+| Treatment Type | Total Revenue |
+|---|---:|
+| Chemotherapy | 662,548.04 |
+| X-Ray | 548,881.25 |
+| MRI | 535,296.48 |
+| ECG | 509,745.97 |
+| Physiotherapy | 491,818.42 |
+
 
 ### Risk Exposure
 - Revenue concentration: **Top 5 doctors generate ~60% of total revenue**
