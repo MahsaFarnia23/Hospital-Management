@@ -75,6 +75,11 @@ To make the analysis reusable in a production setting, the project includes work
 
 ### Revenue Drivers
 - Revenue share by specialization: Pediatrics **46.91%**, Dermatology **35.13%**, Oncology **17.95%**
+| Specialization | Total Revenue | Revenue Share |
+|---|---:|---:|
+| Pediatrics | 1,289,294.61 | 0.4691 (46.91%) |
+| Dermatology | 965,566.84 | 0.3513 (35.13%) |
+| Oncology | 493,428.71 | 0.1795 (17.95%) |
 
 - Top treatment types by revenue: **Chemotherapy** ranks #1, followed by imaging/diagnostics (X-Ray, MRI, ECG) 
 
