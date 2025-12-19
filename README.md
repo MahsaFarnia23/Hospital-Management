@@ -120,6 +120,12 @@ To make the analysis reusable in a production setting, the project includes work
 - Frequent low-cost patients: **16**
 - Other patients: **12**
 
+| Patient Segment | Patient Count |
+|---|---:|
+| Chronic high-frequency patients | 20 |
+| Frequent low-cost patients | 16 |
+| Other patients | 12 |
+
 
 ### Temporal Patterns
 - Demand peak: **April (50 appointments)**  
