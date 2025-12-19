@@ -75,6 +75,7 @@ To make the analysis reusable in a production setting, the project includes work
 
 ### Revenue Drivers
 - Revenue share by specialization: Pediatrics **46.91%**, Dermatology **35.13%**, Oncology **17.95%**
+  
 | Specialization | Total Revenue | Revenue Share |
 |---|---:|---:|
 | Pediatrics | 1,289,294.61 | 0.4691 (46.91%) |
