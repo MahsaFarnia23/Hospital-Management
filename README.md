@@ -96,6 +96,14 @@ To make the analysis reusable in a production setting, the project includes work
 ### Risk Exposure
 - Revenue concentration: **Top 5 doctors generate ~60% of total revenue**
 
+| Doctor ID | First Name | Last Name | Total Revenue | Revenue Share |
+|---|---|---|---:|---:|
+| D005 | Sarah | Taylor | 394,356.89 | 0.1435 (14.35%) |
+| D006 | Alex | Davis | 339,280.84 | 0.1235 (12.35%) |
+| D001 | David | Taylor | 336,851.92 | 0.1226 (12.26%) |
+| D010 | Linda | Wilson | 304,846.08 | 0.1109 (11.09%) |
+| D003 | Jane | Smith | 279,957.14 | 0.1019 (10.19%) |
+
 - Highest volatility (provider-level): doctors such as **D008** and **D005** show the widest monthly revenue ranges
 
 
