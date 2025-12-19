@@ -106,6 +106,14 @@ To make the analysis reusable in a production setting, the project includes work
 
 - Highest volatility (provider-level): doctors such as **D008** and **D005** show the widest monthly revenue ranges
 
+| Doctor ID | First Name | Last Name | Avg. Monthly Revenue | Revenue Range |
+|---|---|---|---:|---:|
+| D008 | Linda | Brown | 21,305.28 | 75,074.93 |
+| D005 | Sarah | Taylor | 32,863.07 | 74,900.79 |
+| D010 | Linda | Wilson | 27,713.28 | 58,190.75 |
+| D003 | Jane | Smith | 27,995.71 | 56,701.70 |
+| D006 | Alex | Davis | 37,697.87 | 52,088.64 |
+
 
 ### Patient Behavior (SQL-only Segmentation)
 - Chronic high-frequency patients: **20**
