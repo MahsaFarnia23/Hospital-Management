@@ -125,7 +125,7 @@ To make the analysis reusable in a production setting, the project includes work
 
 
 ### Temporal Patterns
-- Demand peak: 
+#### - Demand peak: 
 
 | Month | Appointment Count |
 |---|---:|
@@ -133,7 +133,7 @@ To make the analysis reusable in a production setting, the project includes work
 | 2023-01 | 40 |
 
 - Lowest demand: **September (22 appointments)**  
-- Revenue peak: 
+#### - Revenue peak: 
 
 | Month | Monthly Revenue |
 |---|---:|
@@ -142,7 +142,7 @@ To make the analysis reusable in a production setting, the project includes work
 | 2023-06 | 560,830.22 |
 
  weakest revenue: **August (~291K)**
-- MoM analysis shows cyclical growth/decline and occasional divergence between volume vs value.
+#### - MoM analysis shows cyclical growth/decline and occasional divergence between volume vs value.
 
 ---
 
