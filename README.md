@@ -142,7 +142,7 @@ To make the analysis reusable in a production setting, the project includes work
 | 2023-06 | 560,830.22 |
 
  weakest revenue: August (~291K)
-#### - MoM (Month-over-Month) analysis shows cyclical growth/decline and occasional divergence between volume vs value.
+#### - MoM (Month-over-Month) analysis shows cyclical demand patterns and highlights that revenue is driven by treatment mix, not just appointment volume.
 
 ---
 
