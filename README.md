@@ -144,6 +144,15 @@ To make the analysis reusable in a production setting, the project includes work
  weakest revenue: August (~291K)
 #### - MoM (Month-over-Month) analysis shows cyclical demand patterns and highlights that revenue is driven by treatment mix, not just appointment volume.
 
+| Month | Appointments | Revenue | Appointment Change | Revenue Change |
+|---|---:|---:|---:|---:|
+| 2023-01 | 40 | 519,533.00 | — | — |
+| 2023-02 | 28 | 337,485.38 | -12 | -182,047.62 |
+| 2023-03 | 38 | 488,992.90 | +10 | +151,507.52 |
+| 2023-04 | 50 | 592,871.50 | +12 | +103,878.60 |
+| 2023-05 | 38 | 569,006.50 | -12 | -23,865.00 |
+| 2023-06 | 36 | 560,830.22 | -2 | -8,176.28 |
+
 ---
 
 ## ✅ Executive Summary
