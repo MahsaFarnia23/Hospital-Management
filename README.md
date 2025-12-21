@@ -52,7 +52,7 @@ To make the analysis reusable in a production setting, the project includes work
 - `vw_specialization_revenue` — total revenue + revenue share by specialization  
 - `vw_patient_value_segments` — patient segmentation (Frequency/Monetary/Recency)  
 - `vw_appointment_to_billing_funnel` — Appointment → Treatment → Billing funnel KPIs  
-[sql](docs/data_dictionary.md)
+[sql.views](queries/views.sqbpro)
 
 
 ---
