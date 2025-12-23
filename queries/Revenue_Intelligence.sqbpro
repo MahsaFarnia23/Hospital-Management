@@ -1,0 +1,224 @@
+--Revenue per Appointment by Specialization
+
+WITH specialization_metrics AS (
+
+    SELECT
+
+        d.specialization,
+
+        COUNT(DISTINCT a.appointment_id) AS appointment_count,
+
+        SUM(b.amount) AS total_revenue
+
+    FROM billing b
+
+    JOIN appointments a
+
+        ON b.patient_id = a.patient_id
+
+    JOIN doctors d
+
+        ON a.doctor_id = d.doctor_id
+
+    GROUP BY d.specialization
+
+)
+
+SELECT
+
+    specialization,
+
+    appointment_count,
+
+    total_revenue,
+
+    ROUND(
+
+        total_revenue * 1.0 / appointment_count,
+
+        2
+
+    ) AS revenue_per_appointment
+
+FROM specialization_metrics
+
+ORDER BY revenue_per_appointment DESC;
+----------------------------------------------------
+--Revenue Intelligence — Revenue Decomposition
+
+--  Revenue by Doctor
+
+
+
+SELECT
+
+    d.doctor_id,
+
+    d.first_name,
+
+    d.last_name,
+
+    d.specialization,
+
+    SUM(b.amount) AS total_revenue
+
+FROM billing b
+
+JOIN appointments a
+
+    ON b.patient_id = a.patient_id
+
+JOIN doctors d
+
+    ON a.doctor_id = d.doctor_id
+
+GROUP BY
+
+    d.doctor_id,
+
+    d.first_name,
+
+    d.last_name,
+
+    d.specialization
+
+---------------------------------------------
+--Revenue by Specialization
+
+SELECT
+
+    d.specialization,
+
+    SUM(b.amount) AS total_revenue
+
+FROM billing b
+
+JOIN appointments a
+
+    ON b.patient_id = a.patient_id
+
+JOIN doctors d
+
+    ON a.doctor_id = d.doctor_id
+
+GROUP BY d.specialization
+
+ORDER BY total_revenue DESC
+----------------------------------------------------
+--Monthly Revenue by Doctor
+
+SELECT
+
+    d.doctor_id,
+
+    d.first_name,
+
+    d.last_name,
+
+    strftime('%Y-%m', a.appointment_date) AS month,
+
+    SUM(b.amount) AS monthly_revenue
+
+FROM billing b
+
+JOIN appointments a
+
+    ON b.patient_id = a.patient_id
+
+JOIN doctors d
+
+    ON a.doctor_id = d.doctor_id
+
+GROUP BY
+
+    d.doctor_id,
+
+    d.first_name,
+
+    d.last_name,
+
+    month
+
+ORDER BY
+
+    d.doctor_id,
+
+    month;
+--------------------------------------------------
+--Monthly Revenue by Specialization
+
+SELECT
+
+    d.specialization,
+
+    strftime('%Y-%m', a.appointment_date) AS month,
+
+    SUM(b.amount) AS monthly_revenue
+
+FROM billing b
+
+JOIN appointments a
+
+    ON b.patient_id = a.patient_id
+
+JOIN doctors d
+
+    ON a.doctor_id = d.doctor_id
+
+GROUP BY
+
+    d.specialization,
+
+    month
+
+ORDER BY
+
+    d.specialization,
+
+    month;
+
+-------------------------------------------------------
+--Revenue Volatility by Specialization
+
+WITH specialization_monthly_revenue AS (
+
+    SELECT
+
+        d.specialization,
+
+        strftime('%Y-%m', a.appointment_date) AS month,
+
+        SUM(b.amount) AS monthly_revenue
+
+    FROM billing b
+
+    JOIN appointments a
+
+        ON b.patient_id = a.patient_id
+
+    JOIN doctors d
+
+        ON a.doctor_id = d.doctor_id
+
+    GROUP BY
+
+        d.specialization,
+
+        month
+
+)
+
+SELECT
+
+    specialization,
+
+    ROUND(AVG(monthly_revenue), 2) AS avg_monthly_revenue,
+
+    ROUND(MAX(monthly_revenue) - MIN(monthly_revenue), 2) AS revenue_range
+
+FROM specialization_monthly_revenue
+
+GROUP BY specialization
+
+ORDER BY revenue_range DESC;
+
