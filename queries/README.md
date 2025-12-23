@@ -16,4 +16,5 @@ Queries are grouped by business purpose and written for **SQLite**.
 Monthly doctor ranking shows persistent workload concentration, with the same providers—mainly in Pediatrics and Dermatology—frequently occupying top ranks.
 While leadership rotates month to month, overload and underutilization coexist, indicating inefficient appointment allocation.
 This pattern suggests a structural scheduling imbalance, increasing burnout risk and limiting effective capacity use.
+
 [Doctor_Ranking](queries/Doctor_Ranking.sqbpro)
