@@ -17,4 +17,19 @@ Monthly doctor ranking shows persistent workload concentration, with the same pr
 While leadership rotates month to month, overload and underutilization coexist, indicating inefficient appointment allocation.
 This pattern suggests a structural scheduling imbalance, increasing burnout risk and limiting effective capacity use.
 
+### Workload Variance Within Specializations
+
+| Specialization | Month | Avg. Appointments per Doctor | Workload Range |
+|---|---|---:|---:|
+| Pediatrics | 2023-01 | 1.80 | 2 |
+| Dermatology | 2023-01 | 2.33 | 1 |
+| Oncology | 2023-01 | 2.00 | 0 |
+| Dermatology | 2023-02 | 2.00 | 2 |
+| Pediatrics | 2023-02 | 1.20 | 1 |
+
+
+Pediatrics shows the highest workload variance, indicating significant imbalance among doctors within the same specialization.
+Dermatology exhibits moderate but recurring variance, suggesting periodic provider overload.
+Oncology remains consistently balanced, with minimal variance and predictable workload distribution.
+
 [Doctor_Performance_Capacity.sqbpro](queries/Doctor_Performance_Capacity.sqbpro)
