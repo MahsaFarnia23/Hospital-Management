@@ -1,0 +1,114 @@
+-- Appointment → Treatment Conversion
+
+WITH
+
+appt AS (
+
+  SELECT DISTINCT appointment_id
+
+  FROM appointments
+
+),
+
+treated_appt AS (
+
+  SELECT DISTINCT appointment_id
+
+  FROM treatments
+
+  WHERE appointment_id IS NOT NULL
+
+)
+
+SELECT
+
+  (SELECT COUNT(*) FROM appt) AS appointments,
+
+  (SELECT COUNT(*) FROM treated_appt) AS treated_appointments,
+
+  ROUND((SELECT COUNT(*) FROM treated_appt) * 1.0 / NULLIF((SELECT COUNT(*) FROM appt), 0), 4) AS appt_to_treatment_rate,
+
+  ROUND(1 - ((SELECT COUNT(*) FROM treated_appt) * 1.0 / NULLIF((SELECT COUNT(*) FROM appt), 0)), 4) AS appt_dropoff;
+
+
+-----------------------------------------------------------
+-- Treatment → Billing Conversion (Patient-Level)
+
+WITH
+
+treated_patients AS (
+
+    SELECT DISTINCT a.patient_id
+
+    FROM treatments t
+
+    JOIN appointments a
+
+        ON a.appointment_id = t.appointment_id
+
+),
+
+billed_patients AS (
+
+    SELECT DISTINCT patient_id
+
+    FROM billing
+
+)
+
+SELECT
+
+    (SELECT COUNT(*) FROM treated_patients) AS patients_with_treatment,
+
+    (SELECT COUNT(*)
+
+     FROM treated_patients tp
+
+     JOIN billed_patients bp
+
+        ON bp.patient_id = tp.patient_id
+
+    ) AS treated_patients_with_billing,
+
+    ROUND(
+
+        (SELECT COUNT(*)
+
+         FROM treated_patients tp
+
+         JOIN billed_patients bp
+
+            ON bp.patient_id = tp.patient_id
+
+        ) * 1.0
+
+        / NULLIF((SELECT COUNT(*) FROM treated_patients), 0),
+
+        4
+
+    ) AS treatment_to_billing_rate,
+
+    ROUND(
+
+        1 -
+
+        (
+
+            (SELECT COUNT(*)
+
+             FROM treated_patients tp
+
+             JOIN billed_patients bp
+
+                ON bp.patient_id = tp.patient_id
+
+            ) * 1.0
+
+            / NULLIF((SELECT COUNT(*) FROM treated_patients), 0)
+
+        ),
+
+        4
+
+    ) AS treatment_to_billing_dropoff;
+
