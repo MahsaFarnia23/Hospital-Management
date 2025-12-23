@@ -13,7 +13,7 @@ Queries are grouped by business purpose and written for **SQLite**.
 | D005 | Sarah | Taylor | Dermatology | 2023-01 | 2 | 3 |
 | D006 | Alex | Davis | Pediatrics | 2023-01 | 2 | 3 |
 
-Monthly doctor ranking shows persistent workload concentration, with the same providers—mainly in Pediatrics and Dermatology—frequently occupying top ranks.
+Monthly doctor ranking shows persistent workload concentration, with the same providers, mainly in Pediatrics and Dermatology, frequently occupying top ranks.
 While leadership rotates month to month, overload and underutilization coexist, indicating inefficient appointment allocation.
 This pattern suggests a structural scheduling imbalance, increasing burnout risk and limiting effective capacity use.
 
