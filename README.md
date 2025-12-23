@@ -153,7 +153,7 @@ To make the analysis reusable in a production setting, the project includes work
 | 2023-05 | 38 | 569,006.50 | -12 | -23,865.00 |
 | 2023-06 | 36 | 560,830.22 | -2 | -8,176.28 |
 
-[MoM_analysis](queries/MoM_analysis .sqbpro)
+[MoM_analysis](queries/MoM_analysis.sqbpro)
 
 ---
 
