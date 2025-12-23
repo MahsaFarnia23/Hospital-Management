@@ -32,4 +32,17 @@ Pediatrics shows the highest workload variance, indicating significant imbalance
 Dermatology exhibits moderate but recurring variance, suggesting periodic provider overload.
 Oncology remains consistently balanced, with minimal variance and predictable workload distribution.
 
+### Total Appointments by Specialization
+
+| Specialization | Total Appointments |
+|---|---:|
+| Pediatrics | 98 |
+| Dermatology | 70 |
+| Oncology | 32 |
+
+Pediatrics dominates appointment demand, indicating the highest operational workload.
+Dermatology shows steady demand, while Oncology operates at substantially lower volume, requiring less scheduling capacity.
+
 [Doctor_Performance_Capacity.sqbpro](queries/Doctor_Performance_Capacity.sqbpro)
+
+----
