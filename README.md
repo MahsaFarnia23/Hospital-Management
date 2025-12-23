@@ -91,7 +91,7 @@ To make the analysis reusable in a production setting, the project includes work
 | MRI | 535,296.48 |
 | ECG | 509,745.97 |
 | Physiotherapy | 491,818.42 |
-
+[Revenue_Drivers](queries/Revenue_Drivers.sqbpro)
 
 ### Risk Exposure
 - Revenue concentration: **Top 5 doctors generate ~60% of total revenue**
@@ -113,7 +113,7 @@ To make the analysis reusable in a production setting, the project includes work
 | D010 | Linda | Wilson | 27,713.28 | 58,190.75 |
 | D003 | Jane | Smith | 27,995.71 | 56,701.70 |
 | D006 | Alex | Davis | 37,697.87 | 52,088.64 |
-
+[Risk_Exposure](queries/Risk_Exposure.sqbpro)
 
 ### Patient Behavior (SQL-only Segmentation)
 
@@ -122,6 +122,7 @@ To make the analysis reusable in a production setting, the project includes work
 | Chronic high-frequency patients | 20 |
 | Frequent low-cost patients | 16 |
 | Other patients | 12 |
+[Patient_Behavior](queries/Patient_Behavior.sqbpro)
 
 
 ### Temporal Patterns
@@ -142,6 +143,8 @@ To make the analysis reusable in a production setting, the project includes work
 | 2023-06 | 560,830.22 |
 
  weakest revenue: August (~291K)
+[Temporal_Patterns](queries/Temporal_Patterns.sqbpro)
+ 
 #### - MoM (Month-over-Month) analysis shows cyclical demand patterns and highlights that revenue is driven by treatment mix, not just appointment volume.
 
 | Month | Appointments | Revenue | Appointment Change | Revenue Change |
