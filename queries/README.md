@@ -43,7 +43,7 @@ Oncology remains consistently balanced, with minimal variance and predictable wo
 Pediatrics dominates appointment demand, indicating the highest operational workload.
 Dermatology shows steady demand, while Oncology operates at substantially lower volume, requiring less scheduling capacity.
 
-[Doctor_Performance_Capacity](queries/Doctor_Performance_Capacity.sqbpro)
+[Doctor_Performance_Capacity](/Doctor_Performance_Capacity.sqbpro)
 
 ----
 ## Revenue Intelligence 
@@ -64,7 +64,7 @@ Dermatology shows steady demand, while Oncology operates at substantially lower 
 
 ### Revenue Volatility by Specialization
 
-[Revenue_Intelligence](queries/Revenue_Intelligence.sqbpro)
+[Revenue_Intelligence](/Revenue_Intelligence.sqbpro)
 
 ----
 ## Patient Behavior 
