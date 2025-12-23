@@ -1,0 +1,74 @@
+--Revenue by Treatment Type
+
+SELECT
+
+    t.treatment_type,
+
+    SUM(b.amount) AS total_revenue
+
+FROM billing b
+
+JOIN appointments a
+
+    ON b.patient_id = a.patient_id
+
+JOIN treatments t
+
+    ON t.appointment_id = a.appointment_id
+
+GROUP BY t.treatment_type
+
+ORDER BY total_revenue DESC;
+
+--Revenue Contribution Analysis
+
+WITH specialization_revenue AS (
+
+    SELECT
+
+        d.specialization,
+
+        SUM(b.amount) AS total_revenue
+
+    FROM billing b
+
+    JOIN appointments a
+
+        ON b.patient_id = a.patient_id
+
+    JOIN doctors d
+
+        ON a.doctor_id = d.doctor_id
+
+    GROUP BY d.specialization
+
+),
+
+total AS (
+
+    SELECT SUM(total_revenue) AS grand_total
+
+    FROM specialization_revenue
+
+)
+
+SELECT
+
+    s.specialization,
+
+    s.total_revenue,
+
+    ROUND(
+
+        s.total_revenue * 1.0 / t.grand_total,
+
+        4
+
+    ) AS revenue_share
+
+FROM specialization_revenue s
+
+CROSS JOIN total t
+
+ORDER BY revenue_share DESC;
+
