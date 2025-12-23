@@ -139,3 +139,29 @@ This pattern provides a strong foundation for patient segmentation and identifyi
 [Patient-Level Metrics](Patient-Level_Metrics.sqbpro)
 
 ----
+
+## Time-based Patterns
+
+### Seasonality Detection (Appointments & Revenue)
+
+Appointments and revenue both show clear seasonal patterns, peaking in spring (especially April) and reaching their lowest levels in late summer (August–September).
+Revenue varies more sharply than appointment volume, indicating that financial performance is driven by seasonal changes in treatment mix, not just the number of visits.
+
+| Month (MM) | Appointment Count |
+|---|---:|
+| 01 | 40 |
+| 02 | 28 |
+| 03 | 38 |
+| 04 | 50 |
+| 05 | 38 |
+
+
+| Month (MM) | Revenue |
+|---|---:|
+| 01 | 519,533.00 |
+| 02 | 337,485.38 |
+| 03 | 488,992.90 |
+| 04 | 592,871.50 |
+| 05 | 569,006.50 |
+
+[Seasonality Detection](Seasonality_Detection.sqbpro)
