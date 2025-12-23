@@ -52,7 +52,7 @@ To make the analysis reusable in a production setting, the project includes work
 - `vw_specialization_revenue` — total revenue + revenue share by specialization  
 - `vw_patient_value_segments` — patient segmentation (Frequency/Monetary/Recency)  
 - `vw_appointment_to_billing_funnel` — Appointment → Treatment → Billing funnel KPIs  
-[sql.views](queries/views.sqbpro)
+[views](queries/views.sqbpro)
 
 
 ---
@@ -72,6 +72,7 @@ To make the analysis reusable in a production setting, the project includes work
 |---:|---:|---:|---:|
 | 48 | 48 | 1.00 (100%) | 0.00 (0%) |
 
+[Appointment_Treatment_Billing.sqbpro](queries/Appointment_Treatment_Billing.sqbpro)
 
 ### Revenue Drivers
 - Revenue share by specialization: Pediatrics **46.91%**, Dermatology **35.13%**, Oncology **17.95%**
