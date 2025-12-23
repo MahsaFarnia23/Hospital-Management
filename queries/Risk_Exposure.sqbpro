@@ -1,0 +1,121 @@
+--Revenue Concentration Risk (Top Providers)
+
+WITH doctor_revenue AS (
+
+    SELECT
+
+        d.doctor_id,
+
+        d.first_name,
+
+        d.last_name,
+
+        SUM(b.amount) AS total_revenue
+
+    FROM billing b
+
+    JOIN appointments a
+
+        ON b.patient_id = a.patient_id
+
+    JOIN doctors d
+
+        ON a.doctor_id = d.doctor_id
+
+    GROUP BY
+
+        d.doctor_id,
+
+        d.first_name,
+
+        d.last_name
+
+),
+
+total AS (
+
+    SELECT SUM(total_revenue) AS grand_total
+
+    FROM doctor_revenue
+
+)
+
+SELECT
+
+    dr.doctor_id,
+
+    dr.first_name,
+
+    dr.last_name,
+
+    dr.total_revenue,
+
+    ROUND(dr.total_revenue * 1.0 / t.grand_total, 4) AS revenue_share
+
+FROM doctor_revenue dr
+
+CROSS JOIN total t
+
+ORDER BY revenue_share DESC;
+-------------------------------------
+--Revenue Volatility by Doctor
+
+WITH doctor_monthly_revenue AS (
+
+    SELECT
+
+        d.doctor_id,
+
+        d.first_name,
+
+        d.last_name,
+
+        strftime('%Y-%m', a.appointment_date) AS month,
+
+        SUM(b.amount) AS monthly_revenue
+
+    FROM billing b
+
+    JOIN appointments a
+
+        ON b.patient_id = a.patient_id
+
+    JOIN doctors d
+
+        ON a.doctor_id = d.doctor_id
+
+    GROUP BY
+
+        d.doctor_id,
+
+        d.first_name,
+
+        d.last_name,
+
+        month
+
+)
+
+SELECT
+
+    doctor_id,
+
+    first_name,
+
+    last_name,
+
+    ROUND(AVG(monthly_revenue), 2) AS avg_monthly_revenue,
+
+    ROUND(MAX(monthly_revenue) - MIN(monthly_revenue), 2) AS revenue_range
+
+FROM doctor_monthly_revenue
+
+GROUP BY
+
+    doctor_id,
+
+    first_name,
+
+    last_name
+
+ORDER BY revenue_range DESC;
