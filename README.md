@@ -191,8 +191,8 @@ Overall, the analysis highlights the need for **flexible staffing, revenue diver
 
 ## ▶️ How to Run
 1) Load CSV files into SQLite and create the database schema.  
-2) Run `sql/00_create_views.sql` to generate working views.  
-3) Run analysis queries from the `sql/` folder or read details in `docs/`.
+2) Run `views` to generate working views.  
+3) Run analysis queries from the `queries/` folder.
 
 ---
 
