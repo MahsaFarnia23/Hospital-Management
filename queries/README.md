@@ -122,3 +122,20 @@ Dermatology and Oncology show lower averages but still meaningful variability, h
 
 ----
 ## Patient Behavior 
+
+### Patient-Level Metrics
+
+| Patient ID | Visit Count | Total Spend | Last Visit Date |
+|---|---:|---:|---|
+| P001 | 8 | 61,752.56 | 2023-04-09 |
+| P002 | 6 | 35,812.44 | 2023-10-06 |
+| P003 | 4 | 31,747.52 | 2023-08-26 |
+| P004 | 4 | 21,450.04 | 2023-07-07 |
+| P005 | 16 | 297,758.56 | 2023-11-14 |
+
+Patient behavior is highly uneven in terms of visit frequency and total spending, with a small subset of patients accounting for a disproportionate share of overall costs.
+This pattern provides a strong foundation for patient segmentation and identifying high-cost or operationally intensive patient groups.
+
+[Patient-Level Metrics](Patient-Level_Metrics.sqbpro)
+
+----
