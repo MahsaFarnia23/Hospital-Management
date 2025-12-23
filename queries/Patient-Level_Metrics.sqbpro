@@ -1,0 +1,27 @@
+--Patient-Level Metrics (Frequency, Monetary, Recency)
+
+WITH patient_metrics AS (
+
+    SELECT
+
+        a.patient_id,
+
+        COUNT(DISTINCT a.appointment_id) AS visit_count,
+
+        SUM(b.amount) AS total_spend,
+
+        MAX(a.appointment_date) AS last_visit_date
+
+    FROM appointments a
+
+    LEFT JOIN billing b
+
+        ON a.patient_id = b.patient_id
+
+    GROUP BY a.patient_id
+
+)
+
+SELECT *
+
+FROM patient_metrics;
