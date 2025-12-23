@@ -1,0 +1,30 @@
+--Monthly Appointment Trend
+
+SELECT
+
+    strftime('%Y-%m', appointment_date) AS month,
+
+    COUNT(*) AS appointment_count
+
+FROM appointments
+
+GROUP BY month
+
+-------------------------------
+--Monthly Revenue Trend
+
+SELECT
+
+    strftime('%Y-%m', a.appointment_date) AS month,
+
+    SUM(b.amount) AS monthly_revenue
+
+FROM billing b
+
+JOIN appointments a
+
+    ON b.patient_id = a.patient_id
+
+GROUP BY month
+
+ORDER BY monthly_revenue DESC;
