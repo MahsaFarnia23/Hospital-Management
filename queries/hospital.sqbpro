@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="hospital.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="8162"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="doctors" custom_title="0" dock_id="1" table="4,7:maindoctors"/><dock_state state="000000ff00000000fd00000001000000020000059700000381fc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000000005970000011e00ffffff000002910000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="appointments" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="96"/><column index="2" value="65"/><column index="3" value="61"/><column index="4" value="111"/><column index="5" value="111"/><column index="6" value="101"/><column index="7" value="78"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="billing" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="43"/><column index="2" value="65"/><column index="3" value="81"/><column index="4" value="85"/><column index="5" value="62"/><column index="6" value="106"/><column index="7" value="98"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="doctors" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="61"/><column index="2" value="69"/><column index="3" value="66"/><column index="4" value="93"/><column index="5" value="93"/><column index="6" value="106"/><column index="7" value="132"/><column index="8" value="226"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="patients" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="65"/><column index="2" value="69"/><column index="3" value="70"/><column index="4" value="47"/><column index="5" value="85"/><column index="6" value="99"/><column index="7" value="101"/><column index="8" value="105"/><column index="9" value="116"/><column index="10" value="112"/><column index="11" value="195"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="treatments" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="81"/><column index="2" value="96"/><column index="3" value="109"/><column index="4" value="148"/><column index="5" value="62"/><column index="6" value="96"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 6">--Revenue per Appointment by Specialization
+WITH specialization_metrics AS (
+    SELECT
+        d.specialization,
+        COUNT(DISTINCT a.appointment_id) AS appointment_count,
+        SUM(b.amount) AS total_revenue
+    FROM billing b
+    JOIN appointments a
+        ON b.patient_id = a.patient_id
+    JOIN doctors d
+        ON a.doctor_id = d.doctor_id
+    GROUP BY d.specialization
+)
+SELECT
+    specialization,
+    appointment_count,
+    total_revenue,
+    ROUND(
+        total_revenue * 1.0 / appointment_count,
+        2
+    ) AS revenue_per_appointment
+FROM specialization_metrics
+ORDER BY revenue_per_appointment DESC;
+</sql><sql name="SQL 9">--Revenue Intelligence — Revenue Decomposition
+--  Revenue by Doctor
+
+SELECT
+    d.doctor_id,
+    d.first_name,
+    d.last_name,
+    d.specialization,
+    SUM(b.amount) AS total_revenue
+FROM billing b
+JOIN appointments a
+    ON b.patient_id = a.patient_id
+JOIN doctors d
+    ON a.doctor_id = d.doctor_id
+GROUP BY
+    d.doctor_id,
+    d.first_name,
+    d.last_name,
+    d.specialization
+ORDER BY total_revenue DESC;</sql><sql name="SQL 10">--Revenue by Specialization
+SELECT
+    d.specialization,
+    SUM(b.amount) AS total_revenue
+FROM billing b
+JOIN appointments a
+    ON b.patient_id = a.patient_id
+JOIN doctors d
+    ON a.doctor_id = d.doctor_id
+GROUP BY d.specialization
+ORDER BY total_revenue DESC;</sql><sql name="SQL 13">--Monthly Revenue by Doctor
+SELECT
+    d.doctor_id,
+    d.first_name,
+    d.last_name,
+    strftime('%Y-%m', a.appointment_date) AS month,
+    SUM(b.amount) AS monthly_revenue
+FROM billing b
+JOIN appointments a
+    ON b.patient_id = a.patient_id
+JOIN doctors d
+    ON a.doctor_id = d.doctor_id
+GROUP BY
+    d.doctor_id,
+    d.first_name,
+    d.last_name,
+    month
+ORDER BY
+    d.doctor_id,
+    month;</sql><sql name="SQL 15*">--Monthly Revenue by Specialization
+SELECT
+    d.specialization,
+    strftime('%Y-%m', a.appointment_date) AS month,
+    SUM(b.amount) AS monthly_revenue
+FROM billing b
+JOIN appointments a
+    ON b.patient_id = a.patient_id
+JOIN doctors d
+    ON a.doctor_id = d.doctor_id
+GROUP BY
+    d.specialization,
+    month
+ORDER BY
+    d.specialization,
+    month;
+
+	
+	
+	</sql><sql name="SQL 18">--Patient-Level Metrics (Frequency, Monetary, Recency)
+WITH patient_metrics AS (
+    SELECT
+        a.patient_id,
+        COUNT(DISTINCT a.appointment_id) AS visit_count,
+        SUM(b.amount) AS total_spend,
+        MAX(a.appointment_date) AS last_visit_date
+    FROM appointments a
+    LEFT JOIN billing b
+        ON a.patient_id = b.patient_id
+    GROUP BY a.patient_id
+)
+SELECT *
+FROM patient_metrics;</sql><sql name="SQL 22">--Seasonality Detection
+SELECT
+    strftime('%m', appointment_date) AS month_of_year,
+    COUNT(*) AS appointment_count
+FROM appointments
+GROUP BY month_of_year
+ORDER BY month_of_year;
+
+
+SELECT
+    strftime('%m', a.appointment_date) AS month_of_year,
+    SUM(b.amount) AS revenue
+FROM billing b
+JOIN appointments a
+    ON b.patient_id = a.patient_id
+GROUP BY month_of_year
+ORDER BY month_of_year;
+</sql><current_tab id="4"/></tab_sql></sqlb_project>
