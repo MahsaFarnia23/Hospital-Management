@@ -165,3 +165,5 @@ Revenue varies more sharply than appointment volume, indicating that financial p
 | 05 | 569,006.50 |
 
 [Seasonality Detection](Seasonality_Detection.sqbpro)
+
+----
