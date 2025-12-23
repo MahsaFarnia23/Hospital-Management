@@ -1,0 +1,37 @@
+--Growth vs Decline Detection
+
+WITH monthly_metrics AS (
+
+    SELECT
+
+        strftime('%Y-%m', a.appointment_date) AS month,
+
+        COUNT(DISTINCT a.appointment_id) AS appointments,
+
+        SUM(b.amount) AS revenue
+
+    FROM appointments a
+
+    LEFT JOIN billing b
+
+        ON a.patient_id = b.patient_id
+
+    GROUP BY month
+
+)
+
+SELECT
+
+    month,
+
+    appointments,
+
+    revenue,
+
+    appointments - LAG(appointments) OVER (ORDER BY month) AS appointment_change,
+
+    revenue - LAG(revenue) OVER (ORDER BY month) AS revenue_change
+
+FROM monthly_metrics
+
+ORDER BY month;
