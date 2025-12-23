@@ -5,11 +5,9 @@ It was imported into **SQLite** to enable structured, SQL-based analysis.
 
 ----
 ### Dataset Details
-- **File name:** ``
+- **File name:** `patients.csv, doctors.csv, appointments.csv, treatments.csv, billing.csv`
 - **Source:** [Kaggle — Hospital Management Dataset](https://www.kaggle.com/datasets/kanakbaghel/hospital-management-dataset?utm_source=chatgpt.com&select=treatments.csv)
-- **Dataset type:** 
-- **Number of rows:** 
-- **Number of columns:** 
+- **Dataset type:** Relational / Multi-table healthcare dataset
 
 ### Core tables used:
 - `appointments` (appointment_date, doctor_id, patient_id, …)
