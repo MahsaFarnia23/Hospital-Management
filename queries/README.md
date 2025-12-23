@@ -46,3 +46,25 @@ Dermatology shows steady demand, while Oncology operates at substantially lower 
 [Doctor_Performance_Capacity.sqbpro](queries/Doctor_Performance_Capacity.sqbpro)
 
 ----
+## Revenue Intelligence 
+### Revenue by Doctor 
+
+
+### Revenue by Specialization
+
+
+### Revenue per Appointment by Specialization
+
+
+### Monthly Revenue by Doctor
+
+
+### Monthly Revenue by Specialization 
+
+
+### Revenue Volatility by Specialization
+
+
+
+----
+## Patient Behavior 
