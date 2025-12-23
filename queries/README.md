@@ -17,4 +17,4 @@ Monthly doctor ranking shows persistent workload concentration, with the same pr
 While leadership rotates month to month, overload and underutilization coexist, indicating inefficient appointment allocation.
 This pattern suggests a structural scheduling imbalance, increasing burnout risk and limiting effective capacity use.
 
-[Doctor_Ranking](queries/Doctor_Ranking.sqbpro)
+[Doctor_Performance_Capacity.sqbpro](queries/Doctor_Performance_Capacity.sqbpro)
