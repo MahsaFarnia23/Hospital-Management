@@ -1,0 +1,63 @@
+--Patient Segmentation Logic
+
+WITH patient_metrics AS (
+
+    SELECT
+
+        a.patient_id,
+
+        COUNT(DISTINCT a.appointment_id) AS visit_count,
+
+        SUM(b.amount) AS total_spend,
+
+        MAX(a.appointment_date) AS last_visit_date
+
+    FROM appointments a
+
+    LEFT JOIN billing b
+
+        ON a.patient_id = b.patient_id
+
+    GROUP BY a.patient_id
+
+),
+
+segmented_patients AS (
+
+    SELECT
+
+        patient_id,
+
+        visit_count,
+
+        total_spend,
+
+        last_visit_date,
+
+        CASE
+
+            WHEN visit_count &gt;= 5 AND total_spend &gt;= 100000 THEN 'Chronic high-frequency patients'
+
+            WHEN visit_count &gt;= 4 AND total_spend &lt; 50000 THEN 'Frequent low-cost patients'
+
+            WHEN visit_count &lt;= 2 AND total_spend &gt;= 80000 THEN 'Rare high-cost patients'
+
+            ELSE 'Other patients'
+
+        END AS patient_segment
+
+    FROM patient_metrics
+
+)
+
+SELECT
+
+    patient_segment,
+
+    COUNT(*) AS patient_count
+
+FROM segmented_patients
+
+GROUP BY patient_segment
+
+ORDER BY patient_count DESC;
