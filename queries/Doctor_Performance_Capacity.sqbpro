@@ -1,0 +1,100 @@
+--Doctor Ranking by Workload (Monthly)
+
+WITH monthly_appointments AS (
+
+    SELECT
+
+        d.doctor_id,
+
+        d.first_name,
+
+		d.last_name,
+
+        d.specialization,
+
+        strftime('%Y-%m', a.appointment_date) AS month,
+
+        COUNT(a.appointment_id) AS appointment_count
+
+    FROM appointments a
+
+    JOIN doctors d
+
+        ON a.doctor_id = d.doctor_id
+
+    GROUP BY
+
+        d.doctor_id,
+
+        d.first_name,
+
+		d.last_name,
+
+        d.specialization,
+
+        month
+
+)
+
+SELECT
+
+    *,
+
+    RANK() OVER (
+
+        PARTITION BY month
+
+        ORDER BY appointment_count DESC
+
+    ) AS workload_rank
+
+FROM monthly_appointments
+
+ORDER BY month, workload_rank;
+
+</sql><sql name="SQL 3">--Workload Variance Within Specializations
+
+WITH monthly_appointments AS (
+
+    SELECT
+
+        d.doctor_id,
+
+        d.specialization,
+
+        strftime('%Y-%m', a.appointment_date) AS month,
+
+        COUNT(a.appointment_id) AS appointment_count
+
+    FROM appointments a
+
+    JOIN doctors d
+
+        ON a.doctor_id = d.doctor_id
+
+    GROUP BY
+
+        d.doctor_id,
+
+        d.specialization,
+
+        month
+
+)
+
+SELECT
+
+    specialization,
+
+    month,
+
+    ROUND(AVG(appointment_count),2) AS avg_appointments,
+
+    MAX(appointment_count) - MIN(appointment_count) AS workload_range
+
+FROM monthly_appointments
+
+GROUP BY specialization, month
+
+ORDER BY month, workload_range DESC;
+
